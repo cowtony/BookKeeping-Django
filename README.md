@@ -10,17 +10,21 @@ Or install from requirments.txt file:
 - Generate: `pip freeze > requirements.txt`
 - Restore: `pip install -r requirements.txt`
 
+- `django-admin startproject web_project .`
+- `python manage.py startapp hello`
+
 ## Database
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
-
-- `django-admin startproject web_project .`
+## Other command
 - `python manage.py runserver 8001`
-- `python manage.py startapp hello`
+- `python manage.py createsuperuser --username=<username> --email=<email>`
+
 ## Deploy
 - `python manage.py collectstatic`
 
 ## Reference
-[VScode Tutorial](https://code.visualstudio.com/docs/python/tutorial-django#_use-the-collectstatic-command)
+[Django Document](https://docs.djangoproject.com/en/3.0/),
+[Django + VScode Tutorial](https://code.visualstudio.com/docs/python/tutorial-django)
 
