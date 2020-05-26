@@ -6,6 +6,8 @@ This is a first test of Django.
 > python manage.py runserver 8001
 > python manage.py startapp hello
 
+https://code.visualstudio.com/docs/python/tutorial-django#_use-the-collectstatic-command
+
 # requirements.txt
 Generate: `pip freeze > requirements.txt`
 Restore: `pip install -r requirements.txt`
