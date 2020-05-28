@@ -1,5 +1,8 @@
 # BookKeeping-Django
-This is a first test of Django.
+# TODO
+- Deploy with HeroKu
+- Deploy with AWS
+- Login Authetication
 
 # Developer's Manual
 ## Creating the project
@@ -11,9 +14,9 @@ Or install from requirments.txt file:
 - Restore: `pip install -r requirements.txt`
 
 - `django-admin startproject web_project .`
-- `python manage.py startapp hello`
+- `python manage.py startapp my_app`
 
-## Database
+## Update Database
 - `python manage.py makemigrations`
 - `python manage.py migrate`
 
