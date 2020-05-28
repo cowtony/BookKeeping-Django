@@ -27,7 +27,9 @@ Or install from requirments.txt file:
 ## Deploy
 - `python manage.py collectstatic`
 ### [Deploy to HeroKu](https://devcenter.heroku.com/articles/django-app-configuration)
-
+https://devcenter.heroku.com/articles/deploying-python
+https://devcenter.heroku.com/articles/django-app-configuration
+https://devcenter.heroku.com/articles/git
 - `git push heroku master`
 
 
