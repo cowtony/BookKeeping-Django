@@ -1,12 +1,13 @@
 # BookKeeping-Django
 # TODO
-- Deploy with HeroKu
+- HeroKu need PostgreSQL
 - Deploy with AWS
 - Login Authetication
 
 # Developer's Manual
 ## Creating the project
 - Create virtual environment: `python -m venv env`
+- Activate virtual environment: `source env/Scripts/activate`
 - Install Django: `python -m pip install django`
 
 Or install from requirments.txt file:
@@ -30,6 +31,14 @@ Or install from requirments.txt file:
 https://devcenter.heroku.com/articles/deploying-python
 https://devcenter.heroku.com/articles/django-app-configuration
 https://devcenter.heroku.com/articles/git
+- `pip install gunicorn`
+- `pip install django-heroku`
+- `echo 'web: gunicorn web_project.wsgi' >Procfile`
+- append the following code to `settings.py`:
+```
+import django_heroku
+django_heroku.settings(locals()) 
+```
 - `git push heroku master`
 
 
