@@ -41,7 +41,7 @@ import django_heroku
 django_heroku.settings(locals()) 
 ```
 - `git push heroku master`
-
+https://medium.com/@hdsingh13/deploying-django-app-on-heroku-with-postgres-as-backend-b2f3194e8a43
 
 ## Reference
 [Django Document](https://docs.djangoproject.com/en/3.0/),
