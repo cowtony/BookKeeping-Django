@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'book',
-    # 'whitenoise.runserver_nostatic', # HeroKu
+    'whitenoise.runserver_nostatic', # HeroKu
 ]
 
 MIDDLEWARE = [
@@ -53,11 +53,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'whitenoise.middleware.WhiteNoiseMiddleware', # HeroKu
+    'whitenoise.middleware.WhiteNoiseMiddleware', # HeroKu
 ]
 
-# HeroKu
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # HeroKu
 
 ROOT_URLCONF = 'web_project.urls'
 
@@ -93,9 +93,9 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-# import dj_database_url # HeroKu
-# db_from_env = dj_database_url.config(conn_max_age=600)
-# DATABASES['default'].update(db_from_env)
+import dj_database_url # HeroKu
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
