@@ -10,6 +10,7 @@
 - Create virtual environment: `python -m venv env`
 - Activate virtual environment: `source env/Scripts/activate`
 - Install Django: `python -m pip install django`
+- Upgrade Django: `python -m pip install --upgrade Django`
 
 Or install from requirments.txt file:
 - Generate: `pip freeze > requirements.txt`

@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import dj_database_url # HeroKu
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -28,9 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['cowtony-bookkeeping.herokuapp.com']
 
-SECRET_KEY = os.environ.get('SECRET_KEY') # HeroKu
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') # HeroKu
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') # HeroKu
+# SECRET_KEY = os.environ.get('SECRET_KEY') # HeroKu
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') # HeroKu
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD') # HeroKu
 
 
 # Application definition
@@ -43,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'book',
-    'whitenoise.runserver_nostatic', # HeroKu
+    # 'whitenoise.runserver_nostatic', # HeroKu
 ]
 
 MIDDLEWARE = [
@@ -54,11 +53,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', # HeroKu
+    # 'whitenoise.middleware.WhiteNoiseMiddleware', # HeroKu
 ]
 
 # HeroKu
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 ROOT_URLCONF = 'web_project.urls'
 
@@ -87,15 +86,16 @@ WSGI_APPLICATION = 'web_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': 'Dt5310-f',
-        'HOST': 'localhost',
+        'NAME': 'axfhdoip',
+        'USER': 'axfhdoip',
+        'PASSWORD': '7RY2i-32hIyqxfH--rk-BxhNndPRJy8_',
+        'HOST': 'ruby.db.elephantsql.com',
         'PORT': '5432',
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# import dj_database_url # HeroKu
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
