@@ -35,13 +35,16 @@ https://devcenter.heroku.com/articles/django-app-configuration
 https://devcenter.heroku.com/articles/git
 - `pip install gunicorn`
 - `pip install django-heroku`
-- `echo 'web: gunicorn web_project.wsgi' > Procfile`
-- append the following code to `settings.py`:
-```
-import django_heroku
-django_heroku.settings(locals()) 
-```
+- Procfile
+- Add some lines in `settings.py`
+- runtime.txt
+
+
 - `git push heroku master`
+- `heroku config`
+Migrate database for heroku:
+- `heroku run bash`
+- `python manage.py migrate`
 https://medium.com/@hdsingh13/deploying-django-app-on-heroku-with-postgres-as-backend-b2f3194e8a43
 
 ## Reference

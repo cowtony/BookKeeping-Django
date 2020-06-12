@@ -1,5 +1,9 @@
 env/
-__pycache__
+__pycache__/
 static_collected/
 staticfiles/
 migrations
+*.log
+*.pot
+*.pyc
+local_settings.py

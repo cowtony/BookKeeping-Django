@@ -131,12 +131,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__)) # HeroKu
 STATIC_URL = '/static/'
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected')
-
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_collected') # HeroKu
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # HeroKu
 
-# Activate Django-Heroku.
+# HeroKu
 import django_heroku
 django_heroku.settings(locals())
