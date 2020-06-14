@@ -39,7 +39,6 @@ https://devcenter.heroku.com/articles/git
 - Add some lines in `settings.py`
 - runtime.txt
 
-
 - `git push heroku master`
 - `heroku config`
 Migrate database for heroku:

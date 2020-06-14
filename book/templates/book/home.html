@@ -12,16 +12,22 @@
                 <th>Date</th>
                 <th>Time</th>
                 <th>Description</th>
+                <th>Expense</th>
+                <th>Revenue</th>
                 <th>Asset</th>
+                <th>Liability</th>
             </tr>
             </thead>
             <tbody>
             {% for transaction in message_list %}
                 <tr>
-                    <td>{{ transaction.time | date:'d M Y' }}</td>
+                    <td>{{ transaction.time | date:'Y/M/d' }}</td>
                     <td>{{ transaction.time | time:'H:i:s' }}</td>
                     <td>{{ transaction.description }}</td>
+                    <td>{{ transaction.expense }}</td>
+                    <td>{{ transaction.revenue }}</td>
                     <td>{{ transaction.asset }}</td>
+                    <td>{{ transaction.liability }}</td>
                     <td><a href="{% url 'deleteTransaction' transaction.id %}">Delete</a></td>
                 </tr>
             {% endfor %}

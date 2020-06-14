@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -80,13 +80,24 @@ WSGI_APPLICATION = 'web_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'axfhdoip',
+#         'USER': 'axfhdoip',
+#         'PASSWORD': '7RY2i-32hIyqxfH--rk-BxhNndPRJy8_',
+#         'HOST': 'ruby.db.elephantsql.com',
+#         'PORT': '5432',
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'axfhdoip',
-        'USER': 'axfhdoip',
-        'PASSWORD': '7RY2i-32hIyqxfH--rk-BxhNndPRJy8_',
-        'HOST': 'ruby.db.elephantsql.com',
+        'NAME': 'd7jsm17hd1pp1r',
+        'USER': 'qnvmkvwedqumxl',
+        'PASSWORD': '5318b8e51e760dabe3acbee10082d2a714bd459b1dd0a6c450a741d0b527cb22',
+        'HOST': 'ec2-35-169-254-43.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -131,9 +142,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__)) # HeroKu
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static_collected') # HeroKu
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_collected') # HeroKu
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' # HeroKu
 
 # HeroKu
