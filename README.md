@@ -53,7 +53,7 @@ Create the first Django project:
 - Add some lines in `settings.py`
 - runtime.txt
 
-
+Push the changes to GitHub then:
 - `git push heroku master`
 - `heroku config`
 Migrate database for heroku:
