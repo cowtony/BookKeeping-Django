@@ -25,7 +25,10 @@ SECRET_KEY = '8k3f^1e+5kwf1tuf@-xvq$f=i7%w+%a0giz#u7er#5uf)q0rr2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cowtony-bookkeeping.herokuapp.com']
+ALLOWED_HOSTS = [
+    '127.0.0.1',  # For local testing
+    'cowtony-bookkeeping.herokuapp.com',
+    ]
 
 # SECRET_KEY = os.environ.get('SECRET_KEY') # HeroKu
 # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER') # HeroKu

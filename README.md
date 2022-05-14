@@ -26,14 +26,17 @@ Create the first Django project:
 ## manage.py
 
 - `python manage.py startapp my_app`
-- Update Database `python manage.py makemigrations`
-- Update Database `python manage.py migrate`
+
+Database changes:
+1. Make changes to the models in your `models.py` file.
+1. Run `python manage.py makemigrations` to generate scripts in the `migrations` folder that migrate the database from its current state to the new state.
+1. Run `python manage.py migrate` to apply the scripts to the actual database.
 
 ## Other command
-- `python manage.py runserver 8001`
+- Staart local server: `python manage.py runserver <8001>`
 - `python manage.py createsuperuser --username=<username> --email=<email>`
 
-# HeroKu
+# Deploy to HeroKu
 
 ## [Configuring Django Apps for Heroku](https://devcenter.heroku.com/articles/django-app-configuration)
 
