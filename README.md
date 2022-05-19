@@ -7,8 +7,9 @@
 
 # Developer's Manual
 
-## [Django + VScode Tutorial](https://code.visualstudio.com/docs/python/tutorial-django)
+Ref: [Django + VScode Tutorial](https://code.visualstudio.com/docs/python/tutorial-django)
 
+## Initial environment setup
 - Create a virtual environment: `python -m venv .venv` (a folder `.venv` will be created)
 - Activate virtual environment: `source .venv/Scripts/activate`
 
@@ -25,15 +26,20 @@ Create the first Django project:
 
 ## manage.py
 
-- `python manage.py startapp my_app`
+- `python manage.py startapp <my_app>`
+  Creates a folder called <my_app> that contains a number of code files and one subfolder.
+- `python manage.py collectstatic`
+  For **production** deployments, you typically collect all the static files from your apps into a single folder.
 
 Database changes:
 1. Make changes to the models in your `models.py` file.
-1. Run `python manage.py makemigrations` to generate scripts in the `migrations` folder that migrate the database from its current state to the new state.
-1. Run `python manage.py migrate` to apply the scripts to the actual database.
+1. `python manage.py makemigrations`
+   Generate scripts in the `migrations` folder that migrate the database from its current state to the new state.
+1. `python manage.py migrate`
+   Apply the scripts to the actual database.
 
-## Other command
-- Staart local server: `python manage.py runserver <8001>`
+## Testing
+- Staart local server: `python manage.py runserver 8001`
 - `python manage.py createsuperuser --username=<username> --email=<email>`
 
 # Deploy to HeroKu
