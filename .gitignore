@@ -8,3 +8,4 @@ workspace.code-workspace
 *.pot
 *.pyc
 .venv/
+*.env

@@ -1,12 +1,13 @@
 from django import forms
 from book.models import Transaction
+from datetime import datetime
 
 class TransactionForm(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ('date', 'time', 'description',
+        fields = ('DateTime', 'description',
                   'asset', 'expense', 'revenue', 'liability',)
         widgets = {
-            'date': forms.NumberInput(attrs={'type': 'date'}),
-            'time': forms.TimeInput(),
+            'DateTime': forms.DateTimeInput(attrs={'value': datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, format='%Y-%m-%d %H:%M:%S'),
+            # 'date': forms.NumberInput(attrs={'type': 'date'}),  # Example of Date picker
         }
