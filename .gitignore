@@ -1,6 +1,5 @@
 __pycache__/
 local_settings.py
-migrations
 static_collected/
 staticfiles/
 workspace.code-workspace
