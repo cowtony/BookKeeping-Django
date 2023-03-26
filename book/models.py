@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
+from datetime import datetime
 
 class Transaction(models.Model):
     id = models.AutoField(primary_key=True)
     User = models.CharField(max_length=100, null = False)
-    DateTime = models.DateTimeField("Transaction Timestamp", null = False)
+    DateTime = models.DateTimeField("Transaction Timestamp", null = False, default=datetime.now)
     description = models.CharField(max_length=100, null = False)
 
     expense = models.CharField(max_length=300, null = True, default = 'Empty')

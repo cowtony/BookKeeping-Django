@@ -8,6 +8,6 @@ class TransactionForm(forms.ModelForm):
         fields = ('DateTime', 'description',
                   'asset', 'expense', 'revenue', 'liability',)
         widgets = {
-            'DateTime': forms.DateTimeInput(attrs={'value': datetime.now().strftime('%Y-%m-%d %H:%M:%S')}, format='%Y-%m-%d %H:%M:%S'),
+            'DateTime': forms.DateTimeInput(format='%Y-%m-%d %H:%M:%S'),
             # 'date': forms.NumberInput(attrs={'type': 'date'}),  # Example of Date picker
         }

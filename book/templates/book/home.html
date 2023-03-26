@@ -22,7 +22,7 @@
             <tbody>
             {% for transaction in transaction_list %}
                 <tr>
-                    <td>{{ transaction.DateTime | date:'Y/M/d H:m:s' }}</td>
+                    <td>{{ transaction.DateTime | date:'Y/m/d H:i:s' }}</td>
                     <td>{{ transaction.description }}</td>
                     <td>{{ transaction.expense }}</td>
                     <td>{{ transaction.revenue }}</td>

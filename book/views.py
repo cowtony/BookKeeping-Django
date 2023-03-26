@@ -1,7 +1,6 @@
 from datetime import datetime
 from django.http import HttpResponse
-from django.shortcuts import render
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from book.forms import TransactionForm
 from book.models import Transaction
@@ -17,17 +16,17 @@ class HomeListView(ListView):
 
 
 def about(request):
-    return render(request, "book/about.html")
+    return render(request, 'book/about.html')
 
 
 def contact(request):
-    return render(request, "book/contact.html")
+    return render(request, 'book/contact.html')
 
 
 def addTransaction(request):
     form = TransactionForm(request.POST or None)
 
-    if request.method == "POST":
+    if request.method == 'POST':
         if form.is_valid():
             message = form.save(commit=False)
             message.save()
