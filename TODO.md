@@ -1,7 +1,8 @@
 # TODO
-- Login feature
+- Use JSON for the Transaction
+- User registration
 - Currency service
-- Use JSON
+
 
 - **Deploy** to PythonAnywhere or HeroKu
   - HeroKu configure PostgreSQL

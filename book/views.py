@@ -10,10 +10,23 @@ import re
 class HomeListView(ListView):
     """Renders the home page, with a list of all messages."""
     model = Transaction
+    template_name = 'book/home.html'
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Transaction.objects.filter(user=self.request.user).order_by('-date_time')[:100]  # :5 limits the results to the five most recent
+        else:
+            return Transaction.objects.none()
+
 
     def get_context_data(self, **kwargs):
-        context = super(HomeListView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         return context
+
+
+home_list_view = HomeListView.as_view(
+    context_object_name = 'transaction_list',
+)
 
 
 def about(request):
