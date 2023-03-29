@@ -31,7 +31,7 @@ Or install from `requirments.txt` file:
 Start App:
 
 ```bash
-python manage.py runserver 8001
+python manage.py runserver
 ```
 
 ## Deploy to production

@@ -6,7 +6,7 @@ from book.models import Transaction
 from currency import views as currency_views
 
 home_list_view = views.HomeListView.as_view(
-    queryset = Transaction.objects.order_by('-DateTime')[:100],  # :5 limits the results to the five most recent
+    queryset = Transaction.objects.order_by('-date_time')[:100],  # :5 limits the results to the five most recent
     context_object_name = 'transaction_list',
     template_name = 'book/home.html',
 )

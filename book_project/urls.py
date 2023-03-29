@@ -20,9 +20,9 @@ from django.urls import include, path
 
 # app_name = 'book' # add this line for namespace
 urlpatterns = [
-    path("", include("book.urls")),
+    # path('', include("book.urls")),
+    path('', include("login.urls")),
     path("admin/", admin.site.urls, name='admin'),
-
 ]
 
 urlpatterns += staticfiles_urlpatterns()

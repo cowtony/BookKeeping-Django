@@ -2,6 +2,7 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
+from django.contrib.auth.decorators import login_required
 from book.forms import TransactionForm
 from book.models import Transaction
 import re
@@ -24,14 +25,14 @@ def contact(request):
 
 
 def addTransaction(request):
-    form = TransactionForm(request.POST or None)
-
     if request.method == 'POST':
+        form = TransactionForm(request.POST, user=request.user)
         if form.is_valid():
             message = form.save(commit=False)
             message.save()
             return redirect("home")
     else: # GET
+        form = TransactionForm(user=request.user)
         return render(request, "book/add_transaction.html", {"form": form})
 
 
