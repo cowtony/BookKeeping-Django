@@ -1,5 +1,4 @@
 # TODO
-- Use JSON for the Transaction
 - User registration
 - Currency service
 

@@ -1,10 +1,11 @@
 from datetime import datetime
 from django.http import HttpResponse
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
-from book.forms import TransactionForm
-from book.models import Transaction
+from .forms import TransactionForm, MyModelSearchForm
+from .models import Transaction
 import re
 
 class HomeListView(ListView):
@@ -14,13 +15,18 @@ class HomeListView(ListView):
 
     def get_queryset(self):
         if self.request.user.is_authenticated:
-            return Transaction.objects.filter(user=self.request.user).order_by('-date_time')[:100]  # :5 limits the results to the five most recent
+            queryset = Transaction.objects.filter(user=self.request.user)
+            description_filter_context = self.request.GET.get('description_filter', '')
+            if description_filter_context:
+                queryset = queryset.filter(Q(description__icontains=description_filter_context))
+            return queryset.order_by('-date_time')[:100]  # Limits the results to the most recent 100 rows.
         else:
             return Transaction.objects.none()
 
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+        context = super(HomeListView, self).get_context_data(**kwargs)
+        context['form'] = MyModelSearchForm(self.request.GET)
         return context
 
 
@@ -36,7 +42,7 @@ def about(request):
 def contact(request):
     return render(request, 'book/contact.html')
 
-
+@login_required
 def addTransaction(request):
     if request.method == 'POST':
         form = TransactionForm(request.POST, user=request.user)
